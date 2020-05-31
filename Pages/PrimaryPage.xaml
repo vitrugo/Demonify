@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ft="clr-namespace:FrameTimerX;assembly=FrameTimerX"
+             x:Class="Demonify.Pages.PrimaryPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete Char" IconImageSource="trash.png" Clicked="BtnDeleteChar"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label x:Name="LblTest" VerticalOptions="Center"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds=".5, .05"/>
+            <ft:FrameTimer AbsoluteLayout.LayoutFlags="All"
+                           AbsoluteLayout.LayoutBounds=".1, .25, .2, .15"
+                           BorderColor="Violet" IsCountDown="True" CornerRadius="25"
+                           x:Name="fttimer" IsEnabled="False"/>
+            <Grid VerticalOptions="End" HorizontalOptions="CenterAndExpand"
+                  AbsoluteLayout.LayoutFlags="PositionProportional"
+                  AbsoluteLayout.LayoutBounds=".5, .95">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Status" Grid.Row="0" Grid.Column="0"
+                        x:Name="btnStatus" Clicked="BtnStatus"/>
+                <Button Text="Iventory" Grid.Row="0" Grid.Column="1"/>
+                <Button Text="Blacksmith" Grid.Row="0" Grid.Column="2"/>
+                <Button Text="Market" Grid.Row="1" Grid.Column="0"
+                        Clicked="BtnMarket"/>
+                <Button Text="Training" Grid.Row="1" Grid.Column="1"
+                        x:Name="btnTraining" Clicked="BtnTraining"/>
+                <Button Text="Adventure" Grid.Row="1" Grid.Column="2"/>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

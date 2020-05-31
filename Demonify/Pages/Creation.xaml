@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Demonify.Pages.Creation">
+    <ContentPage.Content>
+        <Frame VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               BorderColor="Black"
+               Padding="5"
+               Margin="3">
+            <StackLayout Spacing="5"
+                         Padding="5"
+                         VerticalOptions="Center">
+                <Image Source="Demonify.png" HorizontalOptions="Center"/>
+                <Entry Placeholder="Your Name"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center"
+                       x:Name="entryName"/>
+                <Frame Padding="5"
+                       BorderColor="Black">
+                    <Grid VerticalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="STR" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"
+                           Grid.Row="0" Grid.Column="0"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Button Text="-" Clicked="BtnMinusStr" x:Name="btnMinusStr" IsEnabled="False"/>
+                            <Label x:Name="LblStr" Text="0" FontSize="Small" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Button Text="+" Clicked="BtnMoreStr" x:Name="btnMoreStr"/>
+                        </StackLayout>
+                        <Label Text="DEF" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"
+                           Grid.Row="0" Grid.Column="1"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Button Text="-" x:Name="btnMinusDef" Clicked="BtnMinusDef" IsEnabled="False"/>
+                            <Label x:Name="LblDef" Text="0" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Button Text="+" x:Name="btnMoreDef" Clicked="BtnMoreDef"/>
+                        </StackLayout>
+                        <Label Text="DEX" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"
+                           Grid.Row="2" Grid.Column="0"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Button Text="-" x:Name="btnMinusDex" Clicked="BtnMinusDex" IsEnabled="False"/>
+                            <Label x:Name="LblDex" Text="0" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Button Text="+" x:Name="btnMoreDex" Clicked="BtnMoreDex"/>
+                        </StackLayout>
+                        <Label Text="WIS" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"
+                           Grid.Row="2" Grid.Column="1"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Button Text="-" x:Name="btnMinusWis" Clicked="BtnMinusWis" IsEnabled="False"/>
+                            <Label x:Name="LblWis" Text="0" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Button Text="+" x:Name="btnMoreWis" Clicked="BtnMoreWis"/>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <Label FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" TextColor="Black" x:Name="LblPointsLeft"/>
+                <Button Clicked="BtnStartGame" Text="Start Game" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
